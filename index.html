@@ -6,30 +6,45 @@
   <title>Portfólio Profissional</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --panel: #111827;
-      --panel-2: #1e293b;
-      --text: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-2: #22c55e;
-      --border: rgba(148, 163, 184, 0.18);
-      --shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+      --bg: #f5f7fb;
+      --bg-soft: #eef2f7;
+      --panel: rgba(255, 255, 255, 0.88);
+      --panel-strong: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #334155;
+      --accent-2: #64748b;
+      --accent-3: #94a3b8;
+      --line: rgba(15, 23, 42, 0.08);
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --radius: 24px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #020617 0%, #0f172a 45%, #111827 100%);
+      background:
+        radial-gradient(circle at top left, rgba(148, 163, 184, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(100, 116, 139, 0.14), transparent 25%),
+        linear-gradient(180deg, #f8fafc 0%, #f1f5f9 45%, #e2e8f0 100%);
       color: var(--text);
       line-height: 1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     .container {
       width: min(1120px, calc(100% - 32px));
@@ -40,71 +55,82 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(2, 6, 23, 0.75);
-      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      background: rgba(255, 255, 255, 0.72);
+      border-bottom: 1px solid var(--line);
     }
 
     .nav-content {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
+      padding: 18px 0;
       gap: 16px;
     }
 
     .logo {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.3px;
     }
 
     .menu {
       display: flex;
-      gap: 18px;
+      gap: 22px;
       flex-wrap: wrap;
     }
 
     .menu a {
       color: var(--muted);
-      transition: 0.2s;
+      font-weight: 600;
+      transition: 0.25s ease;
     }
 
-    .menu a:hover { color: #fff; }
+    .menu a:hover {
+      color: var(--text);
+    }
 
     .hero {
-      padding: 72px 0 40px;
+      padding: 78px 0 48px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 28px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
       align-items: center;
     }
 
     .eyebrow {
       display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 9px 16px;
+      border: 1px solid rgba(100, 116, 139, 0.18);
       border-radius: 999px;
       color: var(--accent);
-      background: rgba(56, 189, 248, 0.08);
-      margin-bottom: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      margin-bottom: 20px;
       font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: var(--shadow-soft);
     }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 4rem);
-      line-height: 1.1;
-      margin: 0 0 14px;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      letter-spacing: -1.4px;
+    }
+
+    h1 span {
+      color: var(--accent-2);
     }
 
     .hero p {
       color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 640px;
-      margin-bottom: 28px;
+      font-size: 1.08rem;
+      max-width: 660px;
+      margin-bottom: 30px;
     }
 
     .actions {
@@ -114,49 +140,59 @@
     }
 
     .btn {
-      padding: 14px 20px;
-      border-radius: 14px;
-      border: 1px solid var(--border);
+      padding: 14px 22px;
+      border-radius: 16px;
       font-weight: 700;
-      transition: 0.2s ease;
+      transition: 0.25s ease;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
     }
 
     .btn.primary {
-      background: linear-gradient(135deg, var(--accent), #2563eb);
+      background: linear-gradient(135deg, #64748b, #334155);
       color: #fff;
       border: none;
     }
 
     .btn.secondary {
-      background: rgba(255, 255, 255, 0.03);
-      color: #fff;
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--text);
     }
 
-    .btn:hover { transform: translateY(-2px); }
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .profile-card,
+    .card,
+    .contact-box,
+    .skill {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
 
     .profile-card {
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.92), rgba(15, 23, 42, 0.94));
-      border: 1px solid var(--border);
-      border-radius: 28px;
+      border-radius: 30px;
       padding: 24px;
-      box-shadow: var(--shadow);
     }
 
     .avatar {
       width: 100%;
-      aspect-ratio: 1/1;
+      aspect-ratio: 1 / 1;
       border-radius: 24px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(56,189,248,0.25), rgba(34,197,94,0.2));
-      border: 1px solid rgba(255,255,255,0.08);
-      font-size: 4rem;
-      font-weight: 700;
-      color: #fff;
+      background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+      color: #0f172a;
+      font-size: 4.2rem;
+      font-weight: 800;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
     }
 
     .profile-meta {
@@ -167,25 +203,32 @@
     }
 
     .meta-item {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 14px;
+      padding: 15px;
     }
 
     .meta-item strong {
       display: block;
-      color: #fff;
+      color: var(--text);
       margin-bottom: 6px;
+      font-size: 0.98rem;
+    }
+
+    .meta-item span {
+      color: var(--muted);
+      font-size: 0.96rem;
     }
 
     section {
-      padding: 28px 0 12px;
+      padding: 32px 0 14px;
     }
 
     .section-title {
       font-size: 2rem;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
 
     .section-subtitle {
@@ -194,11 +237,8 @@
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.78);
-      border: 1px solid var(--border);
-      border-radius: 24px;
+      border-radius: var(--radius);
       padding: 24px;
-      box-shadow: var(--shadow);
     }
 
     .projects {
@@ -209,6 +249,11 @@
 
     .project-card {
       overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
     }
 
     .project-thumb {
@@ -217,14 +262,22 @@
       margin-bottom: 16px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, rgba(56,189,248,0.2), rgba(37,99,235,0.25));
-      color: #fff;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+      color: #0f172a;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
     }
 
-    .project-card h3 { margin: 0 0 8px; }
-    .project-card p { color: var(--muted); margin: 0 0 14px; }
+    .project-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
 
     .tags {
       display: flex;
@@ -235,10 +288,11 @@
     .tag {
       padding: 7px 11px;
       border-radius: 999px;
-      font-size: 0.85rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      color: #cbd5e1;
+      font-size: 0.84rem;
+      background: rgba(148, 163, 184, 0.14);
+      border: 1px solid rgba(100, 116, 139, 0.18);
+      color: var(--accent);
+      font-weight: 700;
     }
 
     .skills {
@@ -251,9 +305,13 @@
       padding: 18px;
       text-align: center;
       border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
       font-weight: 700;
+      color: var(--accent);
+      transition: 0.25s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-2px);
     }
 
     .contact {
@@ -266,15 +324,22 @@
     .contact-box {
       padding: 22px;
       border-radius: 22px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
+    }
+
+    .contact-box h3 {
+      margin-bottom: 8px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
     }
 
     footer {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      padding: 20px 0 40px;
+      padding: 22px 0 40px;
       text-align: center;
+      margin-top: 14px;
     }
 
     @media (max-width: 920px) {
@@ -283,10 +348,6 @@
       .projects,
       .skills {
         grid-template-columns: 1fr;
-      }
-
-      .profile-meta {
-        grid-template-columns: 1fr 1fr;
       }
     }
 
@@ -303,13 +364,21 @@
       .profile-meta {
         grid-template-columns: 1fr;
       }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
   <header class="nav">
     <div class="container nav-content">
-      <a class="logo" href="#inicio">Seu Nome</a>
+      <a class="logo" href="#inicio">Reivel Vieira</a>
       <nav class="menu">
         <a href="#sobre">Sobre</a>
         <a href="#projetos">Projetos</a>
@@ -323,8 +392,8 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Portfólio profissional</span>
-          <h1>Olá, eu sou <span style="color: var(--accent);">Seu Nome</span></h1>
+          <span class="eyebrow">Portfólio acadêmico • Git e GitHub</span>
+          <h1>Olá, eu sou <span>Reivel Vieira</span></h1>
           <p>
             Profissional de tecnologia com foco em soluções digitais, projetos acadêmicos e desenvolvimento contínuo.
             Este portfólio foi criado para apresentar minha trajetória, minhas habilidades e meus principais trabalhos.
@@ -336,15 +405,15 @@
         </div>
 
         <aside class="profile-card">
-          <div class="avatar">SN</div>
+          <div class="avatar">RV</div>
           <div class="profile-meta">
             <div class="meta-item">
               <strong>Área</strong>
-              <span>Infra, Dados ou Dev</span>
+              <span>Tecnologia, redes e soluções digitais</span>
             </div>
             <div class="meta-item">
               <strong>Formação</strong>
-              <span>Curso / Graduação</span>
+              <span>Mestrando em Computação Aplicada</span>
             </div>
             <div class="meta-item">
               <strong>Experiência</strong>
@@ -352,7 +421,7 @@
             </div>
             <div class="meta-item">
               <strong>Objetivo</strong>
-              <span>Mostrar evolução e resultados</span>
+              <span>Demonstrar evolução, prática e resultados</span>
             </div>
           </div>
         </aside>
@@ -362,12 +431,10 @@
     <section id="sobre">
       <div class="container">
         <h2 class="section-title">Sobre</h2>
-        <p class="section-subtitle">Uma seção curta para contar quem você é, o que faz e quais áreas mais gosta.</p>
+        <p class="section-subtitle">Principais áreas de atuação</p>
         <div class="card">
           <p>
-            Sou um profissional em formação apaixonado por tecnologia, com interesse em desenvolvimento web, redes,
-            análise de dados e soluções práticas para problemas reais. Gosto de aprender, criar projetos e transformar
-            ideias em experiências digitais organizadas e funcionais.
+            Sou um profissional em formação apaixonado por tecnologia, redes, segurança, projetos acadêmicos e construção de soluções digitais com aplicação prática.
           </p>
         </div>
       </div>
@@ -376,37 +443,37 @@
     <section id="projetos">
       <div class="container">
         <h2 class="section-title">Projetos</h2>
-        <p class="section-subtitle">Aqui entram os trabalhos que você quer destacar no portfólio.</p>
+        <p class="section-subtitle">Alguns trabalhos e experiências que representam minha trajetória.</p>
         <div class="projects">
           <article class="card project-card">
             <div class="project-thumb">PROJETO 01</div>
-            <h3>Portfólio pessoal</h3>
-            <p>Site criado para apresentar perfil profissional, habilidades e contatos.</p>
+            <h3>Portfólio com GitHub Pages</h3>
+            <p>Desenvolvimento e publicação de página pessoal com HTML, CSS, Git e GitHub.</p>
             <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
               <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">HTML/CSS</span>
             </div>
           </article>
 
           <article class="card project-card">
             <div class="project-thumb">PROJETO 02</div>
-            <h3>Dashboard acadêmico</h3>
-            <p>Painel visual com indicadores e gráficos para análise de resultados.</p>
+            <h3>Aulas em Laboratório</h3>
+            <p>Atividades práticas com sistemas operacionais, ambientes Linux e apoio ao ensino presencial.</p>
             <div class="tags">
-              <span class="tag">BI</span>
-              <span class="tag">Excel</span>
-              <span class="tag">Power BI</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Ubuntu</span>
+              <span class="tag">Prática</span>
             </div>
           </article>
 
           <article class="card project-card">
             <div class="project-thumb">PROJETO 03</div>
-            <h3>Projeto de redes</h3>
-            <p>Exemplo de documentação ou simulação de uma topologia com foco didático.</p>
+            <h3>Iniciação Científica</h3>
+            <p>Atuação em projeto acadêmico com foco em documentação, interfaces e apoio à inovação.</p>
             <div class="tags">
-              <span class="tag">Redes</span>
-              <span class="tag">QoS</span>
+              <span class="tag">Pesquisa</span>
+              <span class="tag">Interfaces</span>
               <span class="tag">Documentação</span>
             </div>
           </article>
@@ -417,16 +484,16 @@
     <section id="habilidades">
       <div class="container">
         <h2 class="section-title">Habilidades</h2>
-        <p class="section-subtitle">Você pode trocar estes itens pelas tecnologias que já domina ou está estudando.</p>
+        <p class="section-subtitle">Tecnologias e áreas que fazem parte da minha jornada profissional.</p>
         <div class="skills">
-          <div class="skill">HTML</div>
-          <div class="skill">CSS</div>
           <div class="skill">Git</div>
           <div class="skill">GitHub</div>
-          <div class="skill">Redes</div>
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
           <div class="skill">Linux</div>
+          <div class="skill">Redes</div>
+          <div class="skill">Excel</div>
           <div class="skill">Power BI</div>
-          <div class="skill">SQL</div>
         </div>
       </div>
     </section>
@@ -434,11 +501,11 @@
     <section id="contato">
       <div class="container">
         <h2 class="section-title">Contato</h2>
-        <p class="section-subtitle">Uma parte simples para deixar seus canais profissionais visíveis.</p>
+        <p class="section-subtitle">Meus canais profissionais para contato e networking.</p>
         <div class="contact">
           <div class="contact-box">
             <h3>Email</h3>
-            <p>seuemail@exemplo.com</p>
+            <p>reivelvieira@gmail.com</p>
           </div>
           <div class="contact-box">
             <h3>Links</h3>
